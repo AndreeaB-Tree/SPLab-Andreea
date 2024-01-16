@@ -9,13 +9,12 @@ class Book(Section):
 
     def printBook(self):
         print("\n-> Book: " + self.title + "\n")
-        if len(self.authors) > 0:
-            print("\n- Authors: ")
-            for author in self.authors:
-                author.printAuthor()
+        print("\n- Authors: ")
+        for author in self.authors:
+            author.printAuthor()
 
-            print("\n\n- Content: ")
-            super().printElement()
+        print("\n\n- Content: ")
+        super().printElement()
 
 
     def addAuthor(self, author):

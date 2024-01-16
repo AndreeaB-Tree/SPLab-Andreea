@@ -1,16 +1,18 @@
 from classes.Element import Element
 from classes.Picture import Picture
-import time
+from classes.Image import Image
 
 
-class Image(Element, Picture):
+class ImageProxy(Element, Picture):
     def __init__(self, url) -> None:
-        time.sleep(1)
         self.url = url
-        self.content = ""
+        self.dim = ""
+        self.loadImage()
+
 
     def printElement(self):
-        print("Image with url: " + self.url)
+        print("Image Proxy with name: " + self.url)
+
 
     def add(self):
         pass
@@ -20,7 +22,8 @@ class Image(Element, Picture):
 
     def get(self):
         pass
-    
+
+
     def url(self):
         pass
 
@@ -29,3 +32,9 @@ class Image(Element, Picture):
 
     def content(self):
         pass
+
+
+    def loadImage(self):
+        Image(self.url)
+    
+
