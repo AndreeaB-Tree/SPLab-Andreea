@@ -1,12 +1,14 @@
 from classes.Element import Element
+from classes.AlignLeft import AlignLeft
 
 
 class Paragraph(Element):
     def __init__(self, text) -> None:
         self.text = text
+        self.textAlignment = AlignLeft()
     
     def printElement(self):
-        print("Paragraph: " + self.text)
+        self.textAlignment.render(self.text, "")
 
     def add(self):
         pass
@@ -16,3 +18,6 @@ class Paragraph(Element):
 
     def get(self):
         pass
+
+    def setAlignStrategy(self, align):
+        self.textAlignment = align

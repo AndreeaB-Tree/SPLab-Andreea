@@ -6,7 +6,6 @@ from classes.Image import Image
 class ImageProxy(Element, Picture):
     def __init__(self, url) -> None:
         self.url = url
-        self.dim = ""
         self.loadImage()
 
 

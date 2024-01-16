@@ -1,32 +1,27 @@
-from classes.ImageProxy import ImageProxy
 from classes.Section import Section
-from classes.Book import Book
-import time
+from classes.Paragraph import Paragraph
+from classes.AlignCenter import AlignCenter
+from classes.AlignLeft import AlignLeft
+from classes.AlignRight import AlignRight
 
 
-start_time = time.time()
+cap1 = Section("Capitolul 1")
+p1 = Paragraph("Paragraf 1")
+p2 = Paragraph("Paragraf 2")
+p3 = Paragraph("Paragraf 3")
+p4 = Paragraph("Paragraf 4")
 
-img1 = ImageProxy("Pamela Anderson")
-img2 = ImageProxy("Kim Kardashian")
-img3 = ImageProxy("Kirby Griffin")
+cap1.add(p1)
+cap1.add(p2)
+cap1.add(p3)
+cap1.add(p4)
 
-playboyS1 = Section("Front Cover")
-playboyS1.add(img1)
-
-playboyS2 = Section("Summer Girls")
-playboyS2.add(img2)
-playboyS2.add(img3)
-
-
-playboy = Book("Playboy")
-playboy.addContent(playboyS1)
-playboy.addContent(playboyS2)
-
-end_time = time.time()
-print("Time: ", end_time - start_time)
+cap1.printElement()
 
 
-start_time = time.time()
-playboy.printBook()
-end_time = time.time()
-print("Time: ", end_time - start_time)
+p1.setAlignStrategy(AlignCenter())
+p2.setAlignStrategy(AlignLeft())
+p3.setAlignStrategy(AlignRight())
+
+
+cap1.printElement()
