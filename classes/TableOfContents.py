@@ -1,6 +1,19 @@
-class TableOfContens():
-    def __init__(self) -> None:
+from classes.Element import Element
+
+
+class TableOfContents(Element):
+    def __init__(self, somethingTableOfContents) -> None:
+        self.somethingTableOfContents = somethingTableOfContents
+
+    def printElement(self):
+        print("TableOfContents: " + self.somethingTableOfContents)
+
+    def add(self):
         pass
 
-    def printTableContents(self):
+    def remove(self):
         pass
+
+    def get(self):
+        pass
+    

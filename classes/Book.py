@@ -1,34 +1,25 @@
-from classes.Chapter import Chapter
+from classes.Section import Section
 
 
-class Book():
+class Book(Section):
     def __init__(self, title) -> None:
-        self.title = title
+        super().__init__(title)
         self.authors = []
-        self.chapters = []
 
 
     def printBook(self):
-        print("-Book-")
-        print("\nTitle: " + self.title)
+        print("\n-> Book: " + self.title + "\n")
+        if len(self.authors) > 0:
+            print("\n- Authors: ")
+            for author in self.authors:
+                author.printAuthor()
 
-        print("\nAuthors: ")
-        for author in self.authors:
-            author.printAuthor()
-
-        print("\nChapters: ")
-        for chapter in self.chapters:
-            chapter.printChapter()
+            print("\n\n- Content: ")
+            super().printElement()
 
 
     def addAuthor(self, author):
         self.authors.append(author)
-        
 
-    def addChapter(self, title):
-        self.chapters.append(Chapter(title))
-        return len(self.chapters) - 1
-
-
-    def getChapter(self, index):
-        return self.chapters[index]
+    def addContent(self, element):
+        super().add(element)
